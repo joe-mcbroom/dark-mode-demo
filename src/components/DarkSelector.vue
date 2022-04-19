@@ -29,6 +29,8 @@ onMounted(() => {
 		@click="setDarkMode(!isDark)"
 	>
 		<!-- Icon -->
-		<span class="text-slate-50 dark:text-slate-800">{{ isDark }}</span>
+		<div
+			class="flex w-6 aspect-square rounded-full dark:bg-slate-800 bg-yellow-500"
+		/>
 	</div>
 </template>
