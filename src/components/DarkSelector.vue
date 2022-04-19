@@ -23,7 +23,12 @@ onMounted(() => {
 });
 </script>
 <template>
-	<div class="select-none cursor-pointer" @click="setDarkMode(!isDark)">
-		Dark Mode: <span>{{ isDark }}</span>
+	<!-- Wrapper -->
+	<div
+		class="select-none cursor-pointer w-14 overflow-hidden rounded-full p-1 bg-slate-800 dark:bg-slate-50"
+		@click="setDarkMode(!isDark)"
+	>
+		<!-- Icon -->
+		<span class="text-slate-50 dark:text-slate-800">{{ isDark }}</span>
 	</div>
 </template>
