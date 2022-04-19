@@ -1,5 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router';
+import DarkSelector from './components/DarkSelector.vue';
 </script>
 
 <template>
@@ -8,7 +9,7 @@ import { RouterLink, RouterView } from 'vue-router';
 	>
 		<router-link to="/">Home</router-link>
 		<router-link to="/about">About</router-link>
-		<div class="absolute top-7 right-7">Dark Mode Div</div>
+		<DarkSelector class="absolute top-7 right-7" />
 	</nav>
 	<main class="container mx-auto mt-12">
 		<RouterView />
