@@ -1,5 +1,7 @@
 <script setup>
-import { onMounted, ref, watch } from 'vue';
+import { computed, onMounted, ref, watch } from 'vue';
+import sunUrl from '@/assets/sun.svg';
+import moonUrl from '@/assets/moon.svg';
 
 const isDark = ref(false);
 
@@ -21,6 +23,10 @@ onMounted(() => {
 			window.matchMedia('(prefers-color-scheme: dark)').matches);
 	setDarkMode(prefersDark);
 });
+
+let imagePath = computed(() => {
+	return isDark.value ? sunUrl : moonUrl;
+});
 </script>
 <template>
 	<!-- Wrapper -->
@@ -30,8 +36,10 @@ onMounted(() => {
 	>
 		<!-- Icon -->
 		<div
-			class="flex w-6 aspect-square rounded-full dark:bg-slate-800 bg-yellow-500 transition-transform duration-200 ease"
+			class="flex w-6 aspect-square rounded-full bg-yellow-500 transition-transform duration-200 ease"
 			:class="isDark ? 'translate-x-0' : 'translate-x-full'"
-		/>
+		>
+			<img :src="imagePath" />
+		</div>
 	</div>
 </template>
