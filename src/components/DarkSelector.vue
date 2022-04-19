@@ -30,7 +30,8 @@ onMounted(() => {
 	>
 		<!-- Icon -->
 		<div
-			class="flex w-6 aspect-square rounded-full dark:bg-slate-800 bg-yellow-500"
+			class="flex w-6 aspect-square rounded-full dark:bg-slate-800 bg-yellow-500 transition-transform duration-200 ease"
+			:class="isDark ? 'translate-x-0' : 'translate-x-full'"
 		/>
 	</div>
 </template>
