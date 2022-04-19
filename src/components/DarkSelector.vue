@@ -9,9 +9,11 @@ const body = ref(null);
 const setDarkMode = (value) => {
 	isDark.value = value;
 	localStorage.setItem('theme', value ? 'dark' : '');
+	body.value.classList.toggle('dark', value);
 };
 
 onMounted(() => {
+	body.value = document.querySelector('body');
 	// Check if the local storage is set or if user prefers dark
 	const prefersDark =
 		localStorage.getItem('theme') === 'dark' ||
